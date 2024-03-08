@@ -1,0 +1,36 @@
+Program.Sub.ScreenSU.Start
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.If(V.Passed.000030,<>,"")
+F.Intrinsic.Control.AndIf(V.Passed.000030,<>,"HOUSE")
+	F.Intrinsic.UI.ChangeCallerProperty(V.Passed.000030,"LOCK",1)
+	F.Intrinsic.UI.ChangeCallerProperty(V.Passed.000049,"LOCK",1)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.ChangeCallerProperty(V.Passed.000030,"LOCK",0)
+	F.Intrinsic.UI.ChangeCallerProperty(V.Passed.000049,"LOCK",0)
+F.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+
+Program.Sub.Comments.Start
+${$0$}$ATG_Disable_Sales_Rep$}$LML$}$9/14/2012
+${$1$}$$}$$}$3$}$28701$}$Order Selected$}$4/25/2016 10:07:46 AM$}$(Program: ORD133GI; Screen: OES133A)
+
+${$1$}$$}$$}$2$}$40111$}$Order Selected$}$4/25/2016 10:07:31 AM$}$(Program: ORD210; Screen: OES0210A)
+
+${$1$}$$}$$}$1$}$11565$}$OES0200A-ORDER-SELECTED-HOOK$}$4/25/2016 10:07:15 AM$}$(Program: ORD200; Screen: OES0200A)
+
+${$1$}$$}$$}$0$}$10721$}$QTS0200A-POST-SCREEN-LOAD-HOOK$}$4/25/2016 10:06:54 AM$}$(Program: QTE200; Screen: QTS0200A)
+
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$Disable the sales rep field (and its browser) on the following screens (unless the value of sales rep is currently equal to "HOUSE" or nothing):
+Order Entry > File > Sales Order
+Order Entry > File > Cycle Billing Orders
+Order Entry > Transactions > Invoicing
+Estimating / Routing & Quote Management > File > Quick Quote
+Program.Sub.Comments.End
+
